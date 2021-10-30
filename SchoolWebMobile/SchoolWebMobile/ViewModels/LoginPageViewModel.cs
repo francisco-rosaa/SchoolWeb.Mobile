@@ -17,11 +17,11 @@ namespace SchoolWebMobile.ViewModels
         public LoginPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            Title = "Welcome";
-            IsEnabled = true;
             _apiService = new ApiService();
-            ColorYelow = App.Current.Resources["ColorYelow"].ToString();
-            ColorBrown = App.Current.Resources["ColorBrown"].ToString();
+            IsEnabled = true;
+
+            Title = "Welcome";
+            Logo = "ic_logo_wide.png";
         }
 
         public DelegateCommand LoginCommand =>
@@ -47,9 +47,7 @@ namespace SchoolWebMobile.ViewModels
             set => SetProperty(ref _isEnabled, value);
         }
 
-        public string ColorYelow { get; set; }
-
-        public string ColorBrown { get; set; }
+        public string Logo { get; set; }
 
         private async void Login()
         {

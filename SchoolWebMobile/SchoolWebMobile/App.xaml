@@ -28,18 +28,36 @@
             <x:String x:Key="ApiWeatherKey">6a3cbe011f0705e9381e8dc64c98ad74</x:String>
 
             <!-- Colors -->
-            <Color x:Key="ColorBlueMain">#0d98ba</Color>
-            <Color x:Key="ColorBrown">#674f2d</Color>
-            <Color x:Key="ColorLime">#96e182</Color>
-            <Color x:Key="ColorYelow">#fafeb1</Color>
-            <Color x:Key="ColorWhite">#FFFFFF</Color>
-            <Color x:Key="ColorDarkGrey">#6c757d</Color>
-            <Color x:Key="ColorBlack">#212529</Color>
+            <x:String x:Key="ColorBlueMain">#0d98ba</x:String>
+            <x:String x:Key="ColorBrown">#674f2d</x:String>
+            <x:String x:Key="ColorLime">#96e182</x:String>
+            <x:String x:Key="ColorYelow">#fafeb1</x:String>
+            <x:String x:Key="ColorWhite">#FFFFFF</x:String>
+            <x:String x:Key="ColorDarkGrey">#6c757d</x:String>
+            <x:String x:Key="ColorBlack">#212529</x:String>
 
             <!-- Style -->
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="#6c757d"/>
-                <Setter Property="BarTextColor" Value="#fafeb1"/>
+                <Setter Property="BarBackgroundColor" Value="#674f2d"/>
+                <Setter Property="BarTextColor" Value="#FFFFFF"/>
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorBlueMain}" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="TextColor" Value="{StaticResource ColorWhite}" />
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource ColorDarkGrey}" />
+            </Style>
+            <Style TargetType="ActivityIndicator">
+                <Setter Property="Color" Value="{StaticResource ColorBlueMain}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="{StaticResource ColorDarkGrey}" />
+                <Setter Property="TextColor" Value="{StaticResource ColorBrown}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
             </Style>
 
         </ResourceDictionary>
