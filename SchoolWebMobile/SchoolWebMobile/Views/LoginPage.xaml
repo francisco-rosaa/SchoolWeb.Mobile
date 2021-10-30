@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="SchoolWebMobile.Views.LoginPage"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             Title="{Binding Title}">
+
+    <StackLayout      
+        Padding="60, 90, 60, 30">
+
+        <Label Text="Email" />
+        <Entry
+            Keyboard="Email"
+            Placeholder="Enter email"
+            Text="{Binding Email}" />
+        <Label Text="Password" />
+        <Entry
+            IsPassword="True"
+            Placeholder="Enter password"
+            Text="{Binding Password}" />
+        <ActivityIndicator
+            IsRunning="{Binding IsRunning}"
+            VerticalOptions="CenterAndExpand" />
+        <Button
+            Command="{Binding LoginCommand}"
+            IsEnabled="{Binding IsEnabled}"
+            CornerRadius="10"
+            TextColor="{Binding ColorYelow}"
+            BackgroundColor="{Binding ColorBrown}"
+            Text="Enter" />
+    </StackLayout>
+
+
+</ContentPage>

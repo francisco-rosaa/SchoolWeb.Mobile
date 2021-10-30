@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             x:Class="SchoolWebMobile.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!-- Parameters -->
+            <x:String x:Key="ApiSchoolBaseUrl">https://schoolweb9.azurewebsites.net</x:String>
+            <x:String x:Key="ApiCreateToken">/Accounts/CreateToken</x:String>
+            <x:String x:Key="ApiSchoolPrefix">/api/Students</x:String>
+            <x:String x:Key="ApiSchoolStudent">/GetStudentByUserName</x:String>
+            <x:String x:Key="ApiSchoolStudentCourses">/GetStudentCourses</x:String>
+            <x:String x:Key="ApiSchoolStudentEvaluations">/GetStudentEvaluations</x:String>
+
+            <x:String x:Key="ApiCountriesBaseUrl">https://restcountries.com</x:String>
+            <x:String x:Key="ApiCountriesPrefix">/v3.1</x:String>
+            <x:String x:Key="ApiCountriesAll">/all</x:String>
+
+            <x:String x:Key="ApiCitiesBaseUrl">https://countriesnow.space</x:String>
+            <x:String x:Key="ApiCitiesPrefix">/api/v0.1/countries</x:String>
+            <x:String x:Key="ApiCitiesAll">/cities</x:String>
+
+            <x:String x:Key="ApiWeatherBaseUrl">api.openweathermap.org</x:String>
+            <x:String x:Key="ApiWeatherPrefix">/data/2.5</x:String>
+            <x:String x:Key="ApiWeatherCity">/weather</x:String>
+            <x:String x:Key="ApiWeatherKey">6a3cbe011f0705e9381e8dc64c98ad74</x:String>
+
+            <!-- Colors -->
+            <Color x:Key="ColorBlueMain">#0d98ba</Color>
+            <Color x:Key="ColorBrown">#674f2d</Color>
+            <Color x:Key="ColorLime">#96e182</Color>
+            <Color x:Key="ColorYelow">#fafeb1</Color>
+            <Color x:Key="ColorWhite">#FFFFFF</Color>
+            <Color x:Key="ColorDarkGrey">#6c757d</Color>
+            <Color x:Key="ColorBlack">#212529</Color>
+
+            <!-- Style -->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#6c757d"/>
+                <Setter Property="BarTextColor" Value="#fafeb1"/>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</prism:PrismApplication>
