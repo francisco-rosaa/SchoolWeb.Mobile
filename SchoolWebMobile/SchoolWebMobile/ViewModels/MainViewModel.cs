@@ -1,4 +1,5 @@
 ﻿using SchoolWebMobile.Models;
+using System;
 
 namespace SchoolWebMobile.ViewModels
 {
@@ -21,6 +22,27 @@ namespace SchoolWebMobile.ViewModels
             }
 
             return instance;
+        }
+
+        public bool IsTokenValid()
+        {
+            if (Token != null)
+            {
+                if (!string.IsNullOrEmpty(Token.Token) && !string.IsNullOrEmpty(Token.Expiration))
+                {
+                    DateTime _expiration = new DateTime();
+
+                    if (DateTime.TryParse(Token.Expiration, out _expiration))
+                    {
+                        if (_expiration >= DateTime.Now)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
         }
     }
 }

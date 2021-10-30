@@ -11,7 +11,7 @@ using Android.App;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SchoolWebMobile.Android")]
-[assembly: AssemblyCopyright("Copyright © YourCompany 2020")]
+[assembly: AssemblyCopyright("Copyright © SchoolWeb 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

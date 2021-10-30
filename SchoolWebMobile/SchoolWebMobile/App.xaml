@@ -48,14 +48,14 @@
                 <Setter Property="TextColor" Value="{StaticResource ColorWhite}" />
             </Style>
             <Style TargetType="Label">
-                <Setter Property="TextColor" Value="{StaticResource ColorDarkGrey}" />
+                <Setter Property="TextColor" Value="{StaticResource ColorBlueMain}" />
             </Style>
             <Style TargetType="ActivityIndicator">
                 <Setter Property="Color" Value="{StaticResource ColorBlueMain}" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
             <Style TargetType="Entry">
-                <Setter Property="PlaceholderColor" Value="{StaticResource ColorDarkGrey}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource ColorBlueMain}" />
                 <Setter Property="TextColor" Value="{StaticResource ColorBrown}" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
             </Style>

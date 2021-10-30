@@ -3,11 +3,14 @@ using Prism.Navigation;
 using SchoolWebMobile.Models;
 using SchoolWebMobile.Services;
 using SchoolWebMobile.Views;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace SchoolWebMobile.ViewModels
 {
     public class LoginPageViewModel : ViewModelBase
     {
+        private readonly INavigationService _navigationService;
         private ApiService _apiService;
         private string _password;
         private bool _isRunning;
@@ -17,6 +20,7 @@ namespace SchoolWebMobile.ViewModels
         public LoginPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
+            _navigationService = navigationService;
             _apiService = new ApiService();
             IsEnabled = true;
 
@@ -51,6 +55,17 @@ namespace SchoolWebMobile.ViewModels
 
         private async void Login()
         {
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await App.Current.MainPage.DisplayAlert("Oops", "No Internet connection", "Accept");
+                });
+
+                Password = string.Empty;
+                return;
+            }
+
             if (string.IsNullOrEmpty(Email))
             {
                 await App.Current.MainPage.DisplayAlert("Hi", "Please enter your email", "Accept");
@@ -91,10 +106,20 @@ namespace SchoolWebMobile.ViewModels
 
             var token = response.Result as TokenResponse;
 
-            var mainViewMode = MainViewModel.GetInstance();
-            mainViewMode.Token = token;
+            var mainViewModel = MainViewModel.GetInstance();
+            mainViewModel.Token = token;
 
-            await NavigationService.NavigateAsync($"NavigationPage/{nameof(MyProfilePage)}");
+            if (mainViewModel.Token == null)
+            {
+                await _navigationService.NavigateAsync
+                    ($"/{nameof(SchoolWebMasterDetailPage)}/NavigationPage/{nameof(LoginPage)}");
+            }
+
+            if (mainViewModel.IsTokenValid())
+            {
+                await _navigationService.NavigateAsync
+                    ($"/{nameof(SchoolWebMasterDetailPage)}/NavigationPage/{nameof(MyProfilePage)}");
+            }
         }
     }
 }
