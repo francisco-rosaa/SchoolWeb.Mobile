@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="SchoolWebMobile.Views.MyProfilePage"
+             x:Class="SchoolWebMobile.Views.WeatherPage"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              Title="{Binding Title}">
 
@@ -11,7 +11,8 @@
         Margin="60, 90, 60, 30">
         <Label
             FontSize="20"
-            Text="My Profile..." />
+            Text="Weather..." />
     </StackLayout>
+
 
 </ContentPage>

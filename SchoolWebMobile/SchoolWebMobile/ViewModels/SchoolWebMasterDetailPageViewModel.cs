@@ -1,10 +1,7 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using Prism.Navigation;
+﻿using Prism.Navigation;
 using SchoolWebMobile.ItemViewModels;
 using SchoolWebMobile.Models;
 using SchoolWebMobile.Views;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -30,14 +27,35 @@ namespace SchoolWebMobile.ViewModels
             {
                 new Menu
                 {
-                    Icon = "",
+                    Icon = "ic_icon_myprofile.png",
                     PageName = $"{nameof(MyProfilePage)}",
                     Title = "My Profile",
                     IsLoginRequired = true
                 },
                 new Menu
                 {
-                    Icon = "",
+                    Icon = "ic_icon_evaluations.png",
+                    PageName = $"{nameof(MyEvaluationsPage)}",
+                    Title = "My Evaluations",
+                    IsLoginRequired = true
+                },
+                new Menu
+                {
+                    Icon = "ic_icon_weather.png",
+                    PageName = $"{nameof(WeatherPage)}",
+                    Title = "Weather",
+                    IsLoginRequired = true
+                },
+                new Menu
+                {
+                    Icon = "ic_icon_about.png",
+                    PageName = $"{nameof(AboutPage)}",
+                    Title = "About",
+                    IsLoginRequired = false
+                },
+                new Menu
+                {
+                    Icon = "ic_icon_login.png",
                     PageName = $"{nameof(LoginPage)}",
                     Title = "Login",
                     IsLoginRequired = false

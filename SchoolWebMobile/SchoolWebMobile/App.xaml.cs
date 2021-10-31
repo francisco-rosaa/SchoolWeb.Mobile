@@ -30,9 +30,12 @@ namespace SchoolWebMobile
             containerRegistry.Register<IApiService, ApiService>();
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<SchoolWebMasterDetailPage, SchoolWebMasterDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<MyProfilePage, MyProfilePageViewModel>();
-            containerRegistry.RegisterForNavigation<SchoolWebMasterDetailPage, SchoolWebMasterDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<MyEvaluationsPage, MyEvaluationsPageViewModel>();
+            containerRegistry.RegisterForNavigation<WeatherPage, WeatherPageViewModel>();
+            containerRegistry.RegisterForNavigation<AboutPage, AboutPageViewModel>();
         }
     }
 }

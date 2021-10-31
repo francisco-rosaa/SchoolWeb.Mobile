@@ -8,7 +8,7 @@ namespace SchoolWebMobile.ViewModels
         public MyProfilePageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-
+            Title = "My Profile";
         }
     }
 }

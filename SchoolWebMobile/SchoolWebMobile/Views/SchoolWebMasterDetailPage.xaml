@@ -21,7 +21,7 @@
                 <Image 
                     WidthRequest="400" 
                     Source="ic_logo_menu.png"
-                    Margin="0, 0, 0, 20"
+                    Margin="0, 0, 0, 25"
                     HorizontalOptions="Start"/>
                 <ListView
                     BackgroundColor="Transparent"
@@ -31,25 +31,27 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Grid>
+                                <Grid
+                                    Margin="10, 0, 10, 25">
                                     <Grid.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding SelectMenuCommand}" />
                                     </Grid.GestureRecognizers>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="2*" />
+                                        <ColumnDefinition Width="10*" />
                                     </Grid.ColumnDefinitions>
                                     <Image
                                         Grid.Column="0"
-                                        HeightRequest="30"
-                                        Source="{Binding Icon}"
-                                        WidthRequest="30" />
+                                        HeightRequest="28"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="Center"
+                                        Source="{Binding Icon}" />
                                     <Label
                                         Grid.Column="1"
                                         FontSize="20"
                                         FontAttributes="Bold"
-                                        Text="{Binding Title}"
-                                        VerticalOptions="Center" />
+                                        VerticalOptions="Center"
+                                        Text="{Binding Title}" />
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
