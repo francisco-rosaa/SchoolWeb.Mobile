@@ -9,10 +9,8 @@
              Title="{Binding Title}">
 
     <ScrollView
-        Padding="20, 0, 20, 0">
+        Padding="20, 20, 20, 0">
         <StackLayout>
-            <ActivityIndicator
-            IsRunning="{Binding IsRunning}" />
             <ffimageloading:CachedImage
                 Aspect="AspectFill"
                 CacheDuration="50"
@@ -183,6 +181,9 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
+            <ActivityIndicator
+            IsRunning="{Binding IsRunning}"
+            VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ScrollView>
 

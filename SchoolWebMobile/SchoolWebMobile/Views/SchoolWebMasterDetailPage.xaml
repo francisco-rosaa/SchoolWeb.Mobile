@@ -49,7 +49,6 @@
                                     <Label
                                         Grid.Column="1"
                                         FontSize="20"
-                                        FontAttributes="Bold"
                                         VerticalOptions="Center"
                                         Text="{Binding Title}" />
                                 </Grid>

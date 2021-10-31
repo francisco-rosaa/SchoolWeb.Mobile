@@ -8,20 +8,27 @@
 
     <StackLayout      
         VerticalOptions="Center">
+        <Image
+            WidthRequest="200"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Source="{Binding Logo}" />
         <Label
-            FontSize="24"
+            FontSize="30"
             HorizontalTextAlignment="Center"
             TextColor="{Binding ColorBrown}"
             Text="1.0.0" />
         <Label
-            FontSize="12"
+            FontSize="13"
             HorizontalTextAlignment="Center"
             TextColor="{Binding ColorBrown}"
             Text="N O V  2 0 2 1" />
         <Label
-            FontSize="18"
+            FontSize="13" />
+        <Label
+            FontSize="20"
             HorizontalTextAlignment="Center"
-            TextColor="{Binding ColorBrown}"
+            TextColor="{Binding ColorBlue}"
             Text="frΔnk" />
     </StackLayout>
   

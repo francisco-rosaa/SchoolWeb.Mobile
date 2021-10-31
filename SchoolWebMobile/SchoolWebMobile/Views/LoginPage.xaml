@@ -11,22 +11,25 @@
         <Image 
             Source="{Binding Logo}"/>
         <StackLayout
-            Padding="15, 0, 15, 0">
+            Padding="60, 0, 60, 0">
             <Label 
                 Text="Email"
+                HorizontalOptions="Center"
                 Padding="0, 20, 0, 0"/>
             <Entry
                 Keyboard="Email"
                 Text="{Binding Email}" />
             <Label
                 Text="Password"
+                HorizontalOptions="Center"
                 Padding="0, 20, 0, 0"/>
             <Entry
                 IsPassword="True"
                 Text="{Binding Password}" />
         </StackLayout>
         <ActivityIndicator
-            IsRunning="{Binding IsRunning}" />        
+            IsRunning="{Binding IsRunning}"
+            VerticalOptions="EndAndExpand" />        
         <Button
             Command="{Binding LoginCommand}"
             IsEnabled="{Binding IsEnabled}"

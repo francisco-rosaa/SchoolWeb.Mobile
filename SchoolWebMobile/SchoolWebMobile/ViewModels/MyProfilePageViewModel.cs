@@ -1,7 +1,6 @@
 ﻿using Prism.Navigation;
 using SchoolWebMobile.Models;
 using SchoolWebMobile.Services;
-using SchoolWebMobile.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -9,7 +8,6 @@ namespace SchoolWebMobile.ViewModels
 {
     public class MyProfilePageViewModel : ViewModelBase
     {
-        private readonly INavigationService _navigationService;
         private readonly IApiService _apiService;
         private StudentResponse _student;
         private string _profilePicturePath;
@@ -20,7 +18,6 @@ namespace SchoolWebMobile.ViewModels
         public MyProfilePageViewModel(INavigationService navigationService, IApiService apiService)
             : base(navigationService)
         {
-            _navigationService = navigationService;
             _apiService = apiService;
             Title = "My Profile";
             LoadStudentAsync();

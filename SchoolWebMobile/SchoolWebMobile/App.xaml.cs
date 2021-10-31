@@ -21,7 +21,7 @@ namespace SchoolWebMobile
             InitializeComponent();
 
             await NavigationService.NavigateAsync
-                ($"/{nameof(SchoolWebMasterDetailPage)}/NavigationPage/{nameof(LoginPage)}");
+                ($"/{nameof(SchoolWebMasterDetailPage)}/NavigationPage/{nameof(AboutPage)}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -36,6 +36,8 @@ namespace SchoolWebMobile
             containerRegistry.RegisterForNavigation<MyEvaluationsPage, MyEvaluationsPageViewModel>();
             containerRegistry.RegisterForNavigation<WeatherPage, WeatherPageViewModel>();
             containerRegistry.RegisterForNavigation<AboutPage, AboutPageViewModel>();
+            containerRegistry.RegisterForNavigation<LogoutPage, LogoutPageViewModel>();
+            containerRegistry.RegisterForNavigation<MyEvaluationDetailsPage, MyEvaluationDetailsPageViewModel>();
         }
     }
 }

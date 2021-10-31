@@ -52,15 +52,35 @@ namespace SchoolWebMobile.ViewModels
                     PageName = $"{nameof(AboutPage)}",
                     Title = "About",
                     IsLoginRequired = false
-                },
-                new Menu
+                }
+            };
+
+            var mainViewModel = MainViewModel.GetInstance();
+
+            if (mainViewModel.IsTokenValid() && mainViewModel.IsEmailSaved())
+            {
+                var menuItem = new Menu
+                {
+                    Icon = "ic_icon_logout.png",
+                    PageName = $"{nameof(LogoutPage)}",
+                    Title = "Logout",
+                    IsLoginRequired = false
+                };
+
+                menus.Add(menuItem);
+            }
+            else
+            {
+                var menuItem = new Menu
                 {
                     Icon = "ic_icon_login.png",
                     PageName = $"{nameof(LoginPage)}",
                     Title = "Login",
                     IsLoginRequired = false
-                }
-            };
+                };
+
+                menus.Add(menuItem);
+            }
 
             Menus = new ObservableCollection<MenuItemViewModel>
                 (menus.Select(x => new MenuItemViewModel(_navigationService)
