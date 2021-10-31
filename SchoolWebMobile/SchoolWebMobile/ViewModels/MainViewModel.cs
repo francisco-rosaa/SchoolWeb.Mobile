@@ -9,6 +9,8 @@ namespace SchoolWebMobile.ViewModels
 
         public TokenResponse Token { get; set; }
 
+        public string Email { get; set; }
+
         public MainViewModel()
         {
             instance = this;
@@ -40,6 +42,16 @@ namespace SchoolWebMobile.ViewModels
                         }
                     }
                 }
+            }
+
+            return false;
+        }
+
+        public bool IsEmailSaved()
+        {
+            if (!string.IsNullOrEmpty(Email))
+            {
+                return true;
             }
 
             return false;

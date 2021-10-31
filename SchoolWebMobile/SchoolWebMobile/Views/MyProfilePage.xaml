@@ -5,13 +5,185 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="SchoolWebMobile.Views.MyProfilePage"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              Title="{Binding Title}">
 
-    <StackLayout      
-        Margin="60, 90, 60, 30">
-        <Label
-            FontSize="20"
-            Text="My Profile..." />
-    </StackLayout>
+    <ScrollView
+        Padding="20, 0, 20, 0">
+        <StackLayout>
+            <ActivityIndicator
+            IsRunning="{Binding IsRunning}" />
+            <ffimageloading:CachedImage
+                Aspect="AspectFill"
+                CacheDuration="50"
+                RetryCount="3"
+                RetryDelay="600"
+                Source="{Binding ProfilePicturePath}"
+                HeightRequest="200"
+                WidthRequest="200"
+                HorizontalOptions="Center">
+                <ffimageloading:CachedImage.Transformations>
+                    <fftransformations:CircleTransformation />
+                </ffimageloading:CachedImage.Transformations>
+            </ffimageloading:CachedImage>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span TextColor="#674f2d" FontSize="28" FontAttributes="Bold" Text="{Binding Student.FirstName}" />
+                            <Span FontSize="35" Text=" " />
+                            <Span TextColor="#674f2d" FontSize="28" FontAttributes="Bold" Text="{Binding Student.LastName}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0">
+                </Label>
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontSize="13" Text="Gender " />
+                            <Span FontSize="16" Text="{Binding Student.Gender}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontSize="13" Text="Birth Date: " />
+                            <Span FontSize="16" Text="{Binding BirthDate}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontSize="13" Text="Qualification: " />
+                            <Span FontSize="16" Text="{Binding Student.Qualification}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label
+                    Grid.Row="5"
+                    Grid.Column="0">
+                </Label>
+
+                <Label
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span TextColor="#674f2d" FontSize="13" Text="CC Number: " />
+                            <Span TextColor="#674f2d" FontSize="16" Text="{Binding Student.CcNumber}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label
+                    Grid.Row="7"
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span TextColor="#674f2d" FontSize="13" Text="Email: " />
+                            <Span TextColor="#674f2d" FontSize="16" Text="{Binding Student.Email}}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label
+                    Grid.Row="8"
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span TextColor="#674f2d" FontSize="13" Text="Phone: " />
+                            <Span TextColor="#674f2d" FontSize="16" Text="{Binding Student.PhoneNumber}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label
+                    Grid.Row="9"
+                    Grid.Column="0">
+                </Label>
+
+                <Label
+                    Grid.Row="10"
+                    Grid.Column="0"
+                    HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span TextColor="#674f2d" FontSize="16" Text="{Binding Student.Address}" />
+                            <Span TextColor="#674f2d" FontSize="16" Text="  |  " />
+                            <Span TextColor="#674f2d" FontSize="16" Text="{Binding Student.City}}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label
+                    Grid.Row="11"
+                    Grid.Column="0">
+                </Label>
+                
+            </Grid>
+            <ffimageloading:CachedImage
+                Aspect="AspectFit"
+                HorizontalOptions="CenterAndExpand"
+                CacheDuration="50"
+                RetryCount="3"
+                RetryDelay="600"
+                Source="{Binding PicturePath}"
+                HeightRequest="400"
+                WidthRequest="400"/>
+            <Label
+                HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span TextColor="#674f2d" FontSize="13" Text="ID " />
+                        <Span TextColor="#674f2d" FontSize="13" Text="{Binding Student.Id}}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </ScrollView>
 
 </ContentPage>

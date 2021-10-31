@@ -108,6 +108,7 @@ namespace SchoolWebMobile.ViewModels
 
             var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.Token = token;
+            mainViewModel.Email = Email;
 
             if (mainViewModel.Token == null)
             {
@@ -115,7 +116,7 @@ namespace SchoolWebMobile.ViewModels
                     ($"/{nameof(SchoolWebMasterDetailPage)}/NavigationPage/{nameof(LoginPage)}");
             }
 
-            if (mainViewModel.IsTokenValid())
+            if (mainViewModel.IsTokenValid() && mainViewModel.IsEmailSaved())
             {
                 await _navigationService.NavigateAsync
                     ($"/{nameof(SchoolWebMasterDetailPage)}/NavigationPage/{nameof(MyProfilePage)}");
