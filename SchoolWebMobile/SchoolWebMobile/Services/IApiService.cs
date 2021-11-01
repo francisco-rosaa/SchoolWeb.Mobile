@@ -10,5 +10,9 @@ namespace SchoolWebMobile.Services
         Task<Response> GetSingleResultAsync<T>(string urlBase, string servicePrefix, string controller, string tokenType, string accessToken);
 
         Task<Response> GetMultipleResultsAsync<T>(string urlBase, string servicePrefix, string controller, string tokenType, string accessToken);
+
+        Task<Response> GetSingleResultAsync<T>(string urlBase, string servicePrefix, string controller);
+
+        Task<Response> GetMultipleResultsAsync<T>(string urlBase, string servicePrefix, string controller);
     }
 }

@@ -7,12 +7,101 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              Title="{Binding Title}">
 
-    <StackLayout      
-        Margin="60, 90, 60, 30">
-        <Label
-            FontSize="20"
-            Text="Weather..." />
-    </StackLayout>
+    <ScrollView>
+        <StackLayout>
+            <Image
+                WidthRequest="600" 
+                Source="ic_weather_banner.png"
+                Margin="0, 0, 0, 40"
+                HorizontalOptions="CenterAndExpand"/>
+            <Grid
+            Margin="30, 0, 30, 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
 
+                <Label
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                FontSize="20"
+                TextColor="{Binding ColorBrown}"
+                Margin="0, 0, 0, 15"
+                Text="Search City">
+                </Label>
+
+                <SearchBar
+                Grid.Row="1"
+                Grid.Column="0"
+                Placeholder="Type city name"
+                Margin="0, 0, 15, 40"
+                Text="{Binding Search}" />
+                <Button
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0, 0, 0, 40"
+                Command="{Binding SearchCommand}"
+                Text="GO" />
+
+                <Label
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                FontSize="20"
+                Margin="0, 0, 0, 15"
+                TextColor="{Binding ColorBrown}"
+                Text="Select City">
+                </Label>
+
+                <Picker 
+                Grid.Row="3"
+                Grid.Column="0"
+                Title="Select a country" 
+                Margin="0, 0, 15, 30"
+                ItemsSource="{Binding Countries}" />
+                <Button
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="0, 0, 0, 30"
+                Command="{Binding CountryCommand}"
+                Text="OK" />
+
+                <Picker 
+                Grid.Row="4"
+                Grid.Column="0"
+                Title="Select a city" 
+                Margin="0, 0, 15, 40"
+                ItemsSource="{Binding Cities}" />
+                <Button
+                Grid.Row="4"
+                Grid.Column="1"
+                Margin="0, 0, 0, 40"
+                Command="{Binding CityCommand}"
+                Text="GO" />
+            </Grid>
+
+            <Label
+                FontSize="13"
+                Margin="10, 0, 0, 0"
+                TextColor="{Binding ColorBrown}"
+                Text="PUB"/>
+            <Image
+                WidthRequest="500" 
+                Source="ic_banner_welcome2.jpg"
+                Margin="0, 0, 0, 0"
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"/>
+            <ActivityIndicator
+        IsRunning="{Binding IsRunning}"
+        VerticalOptions="EndAndExpand" />
+        </StackLayout>
+    </ScrollView>
 
 </ContentPage>

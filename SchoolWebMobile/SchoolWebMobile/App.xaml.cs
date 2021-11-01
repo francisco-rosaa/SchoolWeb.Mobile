@@ -38,6 +38,7 @@ namespace SchoolWebMobile
             containerRegistry.RegisterForNavigation<AboutPage, AboutPageViewModel>();
             containerRegistry.RegisterForNavigation<LogoutPage, LogoutPageViewModel>();
             containerRegistry.RegisterForNavigation<MyEvaluationDetailsPage, MyEvaluationDetailsPageViewModel>();
+            containerRegistry.RegisterForNavigation<WeatherDetailsPage, WeatherDetailsPageViewModel>();
         }
     }
 }

@@ -22,7 +22,7 @@
             <x:String x:Key="ApiCitiesPrefix">/api/v0.1/countries</x:String>
             <x:String x:Key="ApiCitiesAll">/cities</x:String>
 
-            <x:String x:Key="ApiWeatherBaseUrl">api.openweathermap.org</x:String>
+            <x:String x:Key="ApiWeatherBaseUrl">https://api.openweathermap.org</x:String>
             <x:String x:Key="ApiWeatherPrefix">/data/2.5</x:String>
             <x:String x:Key="ApiWeatherCity">/weather</x:String>
             <x:String x:Key="ApiWeatherKey">6a3cbe011f0705e9381e8dc64c98ad74</x:String>
@@ -41,7 +41,6 @@
                 <Setter Property="BarBackgroundColor" Value="#674f2d"/>
                 <Setter Property="BarTextColor" Value="#FFFFFF"/>
             </Style>
-
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource ColorBlueMain}" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
@@ -58,6 +57,14 @@
                 <Setter Property="PlaceholderColor" Value="{StaticResource ColorBlueMain}" />
                 <Setter Property="TextColor" Value="{StaticResource ColorBrown}" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style TargetType="SearchBar">
+                <Setter Property="PlaceholderColor" Value="{StaticResource ColorBlueMain}" />
+                <Setter Property="TextColor" Value="{StaticResource ColorBrown}" />
+            </Style>
+            <Style TargetType="Picker">
+                <Setter Property="TitleColor" Value="{StaticResource ColorBlueMain}" />
+                <Setter Property="TextColor" Value="{StaticResource ColorBrown}" />
             </Style>
 
         </ResourceDictionary>

@@ -183,7 +183,7 @@
             </Label>
             <ActivityIndicator
             IsRunning="{Binding IsRunning}"
-            VerticalOptions="CenterAndExpand" />
+            VerticalOptions="EndAndExpand" />
         </StackLayout>
     </ScrollView>
 

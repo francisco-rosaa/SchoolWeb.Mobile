@@ -44,7 +44,7 @@ namespace SchoolWebMobile.ViewModels
                     Icon = "ic_icon_weather.png",
                     PageName = $"{nameof(WeatherPage)}",
                     Title = "Weather",
-                    IsLoginRequired = true
+                    IsLoginRequired = false
                 },
                 new Menu
                 {
