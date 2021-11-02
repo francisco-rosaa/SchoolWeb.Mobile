@@ -27,6 +27,8 @@
             <x:String x:Key="ApiWeatherCity">/weather</x:String>
             <x:String x:Key="ApiWeatherKey">6a3cbe011f0705e9381e8dc64c98ad74</x:String>
 
+            <x:String x:Key="UrlIconWeather">http://openweathermap.org/img/w</x:String>            
+
             <!-- Colors -->
             <x:String x:Key="ColorBlueMain">#0d98ba</x:String>
             <x:String x:Key="ColorBrown">#674f2d</x:String>

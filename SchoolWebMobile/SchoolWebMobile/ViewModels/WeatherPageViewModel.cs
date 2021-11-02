@@ -1,15 +1,8 @@
 ﻿using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation;
 using SchoolWebMobile.Models;
 using SchoolWebMobile.Services;
 using SchoolWebMobile.Views;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using Xamarin.Essentials;
-using Xamarin.Forms;
 
 namespace SchoolWebMobile.ViewModels
 {
@@ -33,7 +26,7 @@ namespace SchoolWebMobile.ViewModels
         }
 
         public DelegateCommand SearchCommand =>
-            _searchCommand ?? (_searchCommand = new DelegateCommand(LoadWeatherSearch));
+            _searchCommand ?? (_searchCommand = new DelegateCommand(GoToWeatherDetailsFromSearch));
 
         public WeatherResponse Weather
         {
@@ -58,39 +51,23 @@ namespace SchoolWebMobile.ViewModels
 
         public string ColorBrown { get; set; }
 
-        private async void LoadWeatherSearch()
+        private async void GoToWeatherDetailsFromSearch()
         {
-            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            if (string.IsNullOrEmpty(Search))
             {
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    await App.Current.MainPage.DisplayAlert("Oops", "No Internet connection", "Accept");
-                });
-
+                await App.Current.MainPage.DisplayAlert("Oops", "Gotta search for something", "Accept");
                 return;
             }
 
-            IsRunning = true;
-
-            string url = App.Current.Resources["ApiWeatherBaseUrl"].ToString();
-            string prefix = App.Current.Resources["ApiWeatherPrefix"].ToString();
-            string controller = $"{App.Current.Resources["ApiWeatherCity"]}?q={Search}&appid={App.Current.Resources["ApiWeatherKey"]}";
-
-            Response response = await _apiService.GetSingleResultAsync<WeatherResponse>(url, prefix, controller);
-
-            IsRunning = false;
-
-            if (!response.IsSuccess)
+            if (Search.Length < 2)
             {
-                await App.Current.MainPage.DisplayAlert("Oops", response.Message, "Accept");
+                await App.Current.MainPage.DisplayAlert("Oops", "Two characters minimum", "Accept");
                 return;
             }
-
-            Weather = response.Result as WeatherResponse;
 
             NavigationParameters parameters = new NavigationParameters
             {
-                { "weather", Weather }
+                { "weather", Search }
             };
 
             await _navigationService.NavigateAsync(nameof(WeatherDetailsPage), parameters);
