@@ -216,5 +216,47 @@ namespace SchoolWebMobile.Services
                 };
             }
         }
+
+        public async Task<Response> PostCitiesAsync<T>(string urlBase, string servicePrefix, string controller, CityRequest cityRequest)
+        {
+            try
+            {
+                var client = new HttpClient
+                {
+                    BaseAddress = new Uri(urlBase),
+                };
+                                                
+                var content = new StringContent(JsonConvert.SerializeObject(cityRequest).ToString(), Encoding.UTF8, "application/json");
+
+                var url = $"{servicePrefix}{controller}";
+                var response = await client.PostAsync(url, content);
+                var result = await response.Content.ReadAsStringAsync();
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = result,
+                    };
+                }
+
+                var singleResult = JsonConvert.DeserializeObject<T>(result);
+
+                return new Response
+                {
+                    IsSuccess = true,
+                    Result = singleResult
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message
+                };
+            }
+        }
     }
 }

@@ -14,5 +14,7 @@ namespace SchoolWebMobile.Services
         Task<Response> GetSingleResultAsync<T>(string urlBase, string servicePrefix, string controller);
 
         Task<Response> GetMultipleResultsAsync<T>(string urlBase, string servicePrefix, string controller);
+
+        Task<Response> PostCitiesAsync<T>(string urlBase, string servicePrefix, string controller, CityRequest cityRequest);
     }
 }

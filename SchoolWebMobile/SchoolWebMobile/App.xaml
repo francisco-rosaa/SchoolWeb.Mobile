@@ -14,9 +14,9 @@
             <x:String x:Key="ApiSchoolStudentCourses">/GetStudentCourses</x:String>
             <x:String x:Key="ApiSchoolStudentEvaluations">/GetStudentEvaluations</x:String>
 
-            <x:String x:Key="ApiCountriesBaseUrl">https://restcountries.com</x:String>
-            <x:String x:Key="ApiCountriesPrefix">/v3.1</x:String>
-            <x:String x:Key="ApiCountriesAll">/all</x:String>
+            <x:String x:Key="ApiCountriesBaseUrl">https://countriesnow.space</x:String>
+            <x:String x:Key="ApiCountriesPrefix">/api/v0.1</x:String>
+            <x:String x:Key="ApiCountriesAll">/countries/capital</x:String>
 
             <x:String x:Key="ApiCitiesBaseUrl">https://countriesnow.space</x:String>
             <x:String x:Key="ApiCitiesPrefix">/api/v0.1/countries</x:String>
